@@ -6,6 +6,7 @@ import fact_recommandation
 import suggest_tags
 import suggest_summary
 import recommandation_news
+# import recommmandation_news2
 
 ############################################# USEFUL FUNCTIONS ##############################
 #update instances every 10 min
@@ -26,7 +27,8 @@ async def handle(request):
         response_obj = suggest_tags.give_tags(data['link'])
     elif function == "getSummary":
         response_obj = suggest_summary.summarize_text(data['link'])
-    
+    # elif function == "NewsForUser":
+    #     reponse_obj = recommmandation_news2.give_list_news_to_user(data['clientId'])
 
     elif function == "getTasteClient":
         response_obj = recommandation_news.compute_score(data['clientId'])
@@ -36,6 +38,7 @@ async def handle(request):
         response_obj = fact_recommandation.verify_facts(data['tags'])
     elif function == "verifyFun":
         response_obj = fact_recommandation.verify_fun(data['tags'])
+
     
 
     else:

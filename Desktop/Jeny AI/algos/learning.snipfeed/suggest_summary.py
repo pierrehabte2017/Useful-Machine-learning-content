@@ -23,14 +23,20 @@ def link_to_text(url1):
         return ''
 
     
+
+
+
 def summarize_text(link):
     
     text = link_to_text(link)
     if len(text)==0:
         return []
-    summary = summarize(text,word_count=200,split=True)
+    try:
+        summary = summarize(text,word_count=200,split=True)
+        return summary
+    except:
+        return [text]
     
-    return summary
 
 # def simulation():
     
