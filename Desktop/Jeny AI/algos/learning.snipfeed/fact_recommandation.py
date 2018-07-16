@@ -23,6 +23,8 @@ from useful_functions import suggestion
 import gensim
 from sklearn.metrics.pairwise import cosine_similarity
 from gensim.models import KeyedVectors
+import gc
+
 
 
 class Instance:

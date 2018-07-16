@@ -6,6 +6,7 @@ import fact_recommandation
 import suggest_tags
 import suggest_summary
 import recommandation_news
+import gc
 # import recommmandation_news2
 
 ############################################# USEFUL FUNCTIONS ##############################

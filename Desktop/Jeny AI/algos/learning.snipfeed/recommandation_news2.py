@@ -7,7 +7,7 @@ from random import uniform
 
 from useful_functions import load_news
 from useful_functions import dict_by_theme
-
+import gc
 
 # =================== function rajoutée ============== #
 class Instance:

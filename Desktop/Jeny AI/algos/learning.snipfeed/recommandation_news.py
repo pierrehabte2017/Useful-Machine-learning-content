@@ -3,7 +3,7 @@ import numpy as np
 import random
 import pandas as pd
 import urllib.request, json
-
+import gc
 
 def give_proba(dict_scores):
     
@@ -29,7 +29,7 @@ def compute_new_score(score, nb_messages_seen):
 def is_snip(name):
 
 
-    if name[:12]=='CUSTOM_FACT_' or name[:15]=='CUSTOM_FUNFACT_' or name[:16]=='CUSTOM_SUMMARY_':
+    if name[:12]=='CUSTOM_FACT_' or name[:15]=='CUSTOM_FUNFACT_' or name[:12]=='CUSTOM_NEWS_':
 
         return False   
     return True

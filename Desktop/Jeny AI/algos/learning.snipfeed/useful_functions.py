@@ -6,7 +6,7 @@ import urllib.request, json
 import gensim
 from sklearn.metrics.pairwise import cosine_similarity
 from gensim.models import KeyedVectors
-
+import gc
 
 
 
@@ -57,6 +57,9 @@ def load_data():
     
     #we transform it into a dataframe
     data_all = pd.DataFrame(list_json)
+
+    collected = gc.collect() # ligne rajoutée
+
     return data_all
  
 
@@ -111,7 +114,8 @@ def suggestion(list_tags_news, list_contexts_news, dict_tags, embeddings):
         if list_ref_to_keep[indices[i]] not in best_ref:
             best_ref.append(list_ref_to_keep[indices[i]])
     
-    
+    collected = gc.collect()
+
     return  best_ref[:10]
 
 
@@ -144,6 +148,7 @@ def most_relevant_fact(list_tags_news, dict_tags, embeddings):
         if list_ref_to_keep[indices[i]] not in best_ref:
             best_ref.append(list_ref_to_keep[indices[i]])
     
+    collected = gc.collect()
     
     return  best_ref
     
